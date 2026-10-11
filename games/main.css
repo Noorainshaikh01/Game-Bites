@@ -1,374 +1,204 @@
-@-webkit-keyframes animLand {
-   0% { background-position: 0px 0px; }
-   100% { background-position: -335px 0px; }
-}
-@-moz-keyframes animLand {
-   0% { background-position: 0px 0px; }
-   100% { background-position: -335px 0px; }
-}
-@-o-keyframes animLand {
-   0% { background-position: 0px 0px; }
-   100% { background-position: -335px 0px; }
-}
-@keyframes animLand {
-   0% { background-position: 0px 0px; }
-   100% { background-position: -335px 0px; }
+body {
+    overflow: hidden;
+    font-family: "Ubuntu sans", Arial, sans-serif;
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1em;
+    background: #1e1e1e;
 }
 
-@-webkit-keyframes animSky {
-   0% { background-position: 0px 100%; }
-   100% { background-position: -275px 100%; }
-}
-@-moz-keyframes animSky {
-   0% { background-position: 0px 100%; }
-   100% { background-position: -275px 100%; }
-}
-@-o-keyframes animSky {
-   0% { background-position: 0px 100%; }
-   100% { background-position: -275px 100%; }
-}
-@keyframes animSky {
-   0% { background-position: 0px 100%; }
-   100% { background-position: -275px 100%; }
+#panel-center {
+    margin: 0;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    bottom: 0;
+    left: 200px;
+    right: 400px;
 }
 
-@-webkit-keyframes animBird {
-   from { background-position: 0px 0px; }
-   to { background-position: 0px -96px; }
-}
-@-moz-keyframes animBird {
-   from { background-position: 0px 0px; }
-   to { background-position: 0px -96px; }
-}
-@-o-keyframes animBird {
-   from { background-position: 0px 0px; }
-   to { background-position: 0px -96px; }
-}
-@keyframes animBird {
-   from { background-position: 0px 0px; }
-   to { background-position: 0px -96px; }
+#panel-left {
+    margin: 0;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+
+    background: #191919;
 }
 
-@-webkit-keyframes animPipe {
-   0% { left: 900px; }
-   100% { left: -100px; }
-}
-@-moz-keyframes animPipe {
-   0% { left: 900px; }
-   100% { left: -100px; }
-}
-@-o-keyframes animPipe {
-   0% { left: 900px; }
-   100% { left: -100px; }
-}
-@keyframes animPipe {
-   0% { left: 900px; }
-   100% { left: -100px; }
+#panel-right {
+    margin: 0;
+    position: absolute;
+    z-index: 30;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+
+    background: #191919;
 }
 
-@-webkit-keyframes animCeiling {
-   0% { background-position: 0px 0px; }
-   100% { background-position: -63px 0px; }
-}
-@-moz-keyframes animCeiling {
-   0% { background-position: 0px 0px; }
-   100% { background-position: -63px 0px; }
-}
-@-o-keyframes animCeiling {
-   0% { background-position: 0px 0px; }
-   100% { background-position: -63px 0px; }
-}
-@keyframes animCeiling {
-   0% { background-position: 0px 0px; }
-   100% { background-position: -63px 0px; }
+#editor { 
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
+#diagram { 
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 200;
+}
 
-*,
-*:before,
-*:after
+#editor-separator, #preview-separator {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 300;
+    background: #191919;
+    border-top: 1px solid #292929;
+    border-bottom: 1px solid #292929;
+}
+#preview-separator {
+    z-index: 400;
+    left: 3px;
+}
+
+#left-separator {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 3px;
+    z-index: 300;
+    background: #191919;
+}
+
+#right-separator {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    z-index: 300;
+    background: #191919;
+}
+
+#preview {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    left: 3px;
+    width: 396px;
+
+    background: #1e1e1e;    
+    border-left: 1px solid #292929;
+    z-index: 210;
+}
+
+#console { 
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    top: 50%;
+    left: 0;
+    left: 3px;
+    width: 396px;
+    z-index: 220;
+    background: #1e1e1e;    
+    border-left: 1px solid #292929;
+}
+
+#console-text {
+    background: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: #666;
+    text-shadow: 0px 1px 1px #000000;
+    filter: dropshadow(color=#000000, offx=0, offy=1);
+    padding: 6px;
+    outline: none;
+    overflow: hidden;
+    scroll: none;
+}
+
+#preview canvas {
+    background: #161616;
+}
+
+#modules { 
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 196px;
+
+    font-size: 13px;
+
+    background: #1e1e1e;
+    border-right: 1px solid #292929;
+}
+
+#modules ul {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+#modules li {
+    list-style: none;
+    line-height: 2.0em;
+    padding: 0 20px;
+    background: #1e1e1e;
+    cursor: pointer;
+
+    text-shadow: 0px 1px 1px #000000;
+    filter: dropshadow(color=#000000, offx=0, offy=1);
+}
+
+#modules li:hover {
+    background: #434343; /* Old browsers */
+    background: -moz-linear-gradient(top, #888 0%, #4e4e4e 4%, #434343 96%, #1e1e1e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#888), color-stop(4%,#4e4e4e), color-stop(96%,#434343), color-stop(100%,#1e1e1e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #888 0%, #4e4e4e 4%, #434343 96%, #1e1e1e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #888 0%, #4e4e4e 4%, #434343 96%, #1e1e1e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #888 0%, #4e4e4e 4%, #434343 96%, #1e1e1e 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #888 0%, #4e4e4e 4%, #434343 96%, #1e1e1e 100%); /* W3C */
+
+}
+
+#modules li.active {
+    background: #292929;
+}
+
+#render
 {
-   /* border box */
-   -moz-box-sizing: border-box;
-   -webkit-box-sizing: border-box;
-   box-sizing: border-box;
-   /* gpu acceleration */
-   -webkit-transition: translate3d(0,0,0);
-   /* select disable */
-   -webkit-touch-callout: none;
-   -webkit-user-select: none;
-   -khtml-user-select: none;
-   -moz-user-select: none;
-   -ms-user-select: none;
-   user-select: none;
-}
-
-html,
-body
-{
-   height: 100%;
-   overflow: hidden;
-   font-family: monospace;
-   font-size: 12px;
-   color: #fff;
-}
-
-#gamecontainer
-{
-   position: relative;
-   width: 100%;
-   height: 100%;
-   min-height: 525px;
-}
-
-/*
-Screen - Game
-*/
-#gamescreen
-{
-   position: absolute;
-   width: 100%;
-   height: 100%;
-}
-
-#sky
-{
-   position: absolute;
-   top: 0;
-   width: 100%;
-   height: 80%;
-   background-image: url('../assets/sky.png');
-   background-repeat: repeat-x;
-   background-position: 0px 100%;
-   background-color: #4ec0ca;
-
-   -webkit-animation: animSky 7s linear infinite;
-   animation: animSky 7s linear infinite;
-}
-
-#flyarea
-{
-   position: absolute;
-   bottom: 0;
-   height: 420px;
-   width: 100%;
-}
-
-#ceiling
-{
-   position: absolute;
-   top: -16px;
-   height: 16px;
-   width: 100%;
-   background-image: url('../assets/ceiling.png');
-   background-repeat: repeat-x;
-
-   -webkit-animation: animCeiling 481ms linear infinite;
-   animation: animCeiling 481ms linear infinite;
-}
-
-#land
-{
-   position: absolute;
-   bottom: 0;
-   width: 100%;
-   height: 20%;
-   background-image: url('../assets/land.png');
-   background-repeat: repeat-x;
-   background-position: 0px 0px;
-   background-color: #ded895;
-
-   -webkit-animation: animLand 2516ms linear infinite;
-   animation: animLand 2516ms linear infinite;
-}
-
-#bigscore
-{
-   position: absolute;
-   top: 20px;
-   left: 150px;
-   z-index: 100;
-}
-
-#bigscore img
-{
-   display: inline-block;
-   padding: 1px;
-}
-
-#splash
-{
-   position: absolute;
-   opacity: 0;
-   top: 75px;
-   left: 65px;
-   width: 188px;
-   height: 170px;
-   background-image: url('../assets/splash.png');
-   background-repeat: no-repeat;
-}
-
-#scoreboard
-{
-   position: absolute;
-   display: none;
-   opacity: 0;
-   top: 64px;
-   left: 43px;
-   width: 236px;
-   height: 280px;
-   background-image: url('../assets/scoreboard.png');
-   background-repeat: no-repeat;
-
-   z-index: 1000;
-}
-
-#medal
-{
-   position: absolute;
-   opacity: 0;
-   top: 114px;
-   left: 32px;
-   width: 44px;
-   height: 44px;
-}
-
-#currentscore
-{
-   position: absolute;
-   top: 105px;
-   left: 107px;
-   width: 104px;
-   height: 14px;
-   text-align: right;
-}
-
-#currentscore img
-{
-   padding-left: 2px;
-}
-
-#highscore
-{
-   position: absolute;
-   top: 147px;
-   left: 107px;
-   width: 104px;
-   height: 14px;
-   text-align: right;
-}
-
-#highscore img
-{
-   padding-left: 2px;
-}
-
-#replay
-{
-   position: absolute;
-   opacity: 0;
-   top: 205px;
-   left: 61px;
-   height: 115px;
-   width: 70px;
-   cursor: pointer;
-}
-
-.boundingbox
-{
-   position: absolute;
-   display: none;
-   top: 0;
-   left: 0;
-   width: 0;
-   height: 0;
-   border: 1px solid red;
-}
-
-#player
-{
-   left: 60px;
-   top: 200px;
-}
-
-.bird
-{
-   position: absolute;
-   width: 34px;
-   height: 24px;
-   background-image: url('../assets/bird.png');
-
-   -webkit-animation: animBird 300ms steps(4) infinite;
-   animation: animBird 300ms steps(4) infinite;
-}
-
-.pipe
-{
-   position: absolute;
-   left: -100px;
-   width: 52px;
-   height: 100%;
-   z-index: 10;
-
-   -webkit-animation: animPipe 7500ms linear;
-   animation: animPipe 7500ms linear;
-}
-
-.pipe_upper
-{
-   position: absolute;
-   top: 0;
-   width: 52px;
-   background-image: url('../assets/pipe.png');
-   background-repeat: repeat-y;
-   background-position: center;
-}
-
-.pipe_upper:after
-{
-   content: "";
-   position: absolute;
-   bottom: 0;
-   width: 52px;
-   height: 26px;
-   background-image: url('../assets/pipe-down.png');
-}
-
-.pipe_lower
-{
-   position: absolute;
-   bottom: 0;
-   width: 52px;
-   background-image: url('../assets/pipe.png');
-   background-repeat: repeat-y;
-   background-position: center;
-}
-
-.pipe_lower:after
-{
-   content: "";
-   position: absolute;
-   top: 0;
-   width: 52px;
-   height: 26px;
-   background-image: url('../assets/pipe-up.png');
-}
-
-#footer
-{
-   position: absolute;
-   bottom: 3px;
-   left: 3px;
-}
-
-#footer a,
-#footer a:link,
-#footer a:visited,
-#footer a:hover,
-#footer a:active
-{
-   display: block;
-   padding: 2px;
-   text-decoration: none;
-   color: #fff;
+    position: absolute;
+    z-index: 9999999;
 }
