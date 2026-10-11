@@ -1,38 +1,60 @@
-# Horse Racing Game (JavaScript) 
+Pixel Racing 
+==========================
+(fork of Javascript Pseudo 3D Racer) [play it!](https://angrybud.com/pixelracing)
 
-To test or play the game feel free to use my GitHub's: [Live Demo](https://fkitsantas.github.io/Horse-Racing-Game-JavaScript/)
+Updates:
+- touch controls added, for mobiles (see 'touch.js')
+- automatic canvas resizing, now fit for all screens
+- opens full window (side controls removed)
+- performance check removed for higher performance
+- works well in portrait layout 
+- demo car sprites updated (not they look straight)
+- some banners changed for 'better' ones
+- driving man moved to right as for right-side driving
+- and his passenger girl from the left
+- music removed (sound work in progress)
 
-## Table of Contents
-- [About The Project](#about-the-project)
-- [Technical Stack](#technical-stack)
-- [Features](#features)
-- [Usage](#usage)
-- [License](#license)
+Retro Style 2D Racing Game
 
-## About The Project
+ * [latest playable version](https://angrybud.com/pixelracing)
+ * view the [source](https://github.com/angrybuddy/pixelracingcc)
 
-This project is designed to emulate the experience of horse racing. It is a simple yet captivating game where players can bet on the horses and watch the race. Each horse has unique attributes that affect its performance in the race, making the game unpredictable and exciting. The game is designed to be intuitive and user-friendly, making it accessible to players of all ages and experience levels.
+A note on performance
+=====================
 
-## Technical Stack
+The performance of this game is device dependent. Though it works well in all 
+relevant browsers, especially with canvas acceleration, IE not much supported 
+yet it works with the game. On mobiles it works.
 
-The game is built using the following technologies:
+A note on code structure
+========================
 
-- HTML: The structure of the web page.
-- CSS: Styling the web page.
-- JavaScript: The core functionality of the game.
-- GitHub Pages: Hosting the game online.
+We are keeping the very ide of the original code, so it is still: "In fact, in order to
+keep it simple to understand it embeds the javascript for each example directly in the HTML
+page (horror!) and, even worse, uses global variables and functions (OMG!)". In the updates 
+we've put touch.j separately yet most of changes are in the main files. Send a note if 
+you need some help about it.
 
-## Features
+Related Links
+=============
 
-- Horse selection: Choose the horse to bet on based on its unique attributes.
-- Betting System: Bet an amount of your choosing on your favorite horse.
-- Dynamic race: Each race is dynamic and unpredictable, with different outcomes each time.
-- Score tracking: Keep track of your wins and losses.
+ * [Lou's Pseudo-3d Page](http://www.extentofthejam.com/pseudo/) - high level how-to guide
+ * [Racer 10k](https://github.com/onaluf/RacerJS) - another javascript racing game
 
-## Usage
+License
+=======
 
-To run the game, you can visit the live demo or download the code from the repository and open `index.html` in your browser.
+[MIT](http://en.wikipedia.org/wiki/MIT_License) license. As of the original.
 
-## License
+>> THE STATUS inhereted from the original project: the sprite graphics are placeholder 
+graphics [borrowed](http://pixel.garoux.net/game/44) from the old genesis version of outrun 
+and used here to honor the great game of the past, and also for the purpose of education. 
 
-Distributed under the GPL-3.0 License. See `LICENSE` for more information.
+Roadmap
+=======
+
+- add more than one track
+- replace pixel car graphics
+- main menu and settings screen
+- find sponsors for the banners
+
