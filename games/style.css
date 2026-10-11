@@ -1,206 +1,176 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #776e65;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* ===== Base Styles ===== */
+* {
+  box-sizing: border-box;
 }
 
-html{
-    scroll-behavior: smooth;
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  overflow-x: hidden;
 }
 
-body{
-    background-color: antiquewhite;
+#page {
+  text-align: center;
+  padding: 1rem;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* ===== Menu ===== */
+#menu {
+  padding: 1rem 0;
 }
 
-.head{
-    width: 25rem;
-    height: 9.375rem;
-    margin-top: 2rem;
+.custom-select {
+  margin-bottom: 1rem;
 }
 
-.new-game{
-    text-decoration: none;
+input, select {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.30);
+  height: 45px;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  appearance: none;
 }
 
-.score{
-    color: white;
-    background-color: #776e65;
-    height: 1.875rem;
-    width: 5.625rem;
-    border-radius: 0.2rem;
-    float: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+input:hover, select:hover {
+  background-color: rgba(0, 0, 0, 0.70);
 }
 
-.title{
-    font-size: 3.75rem;
-    font-weight: bold;
+input:active, select:active {
+  background-color: black;
 }
 
-.new-game:hover{
-    cursor: pointer;
+input:focus, select:focus {
+  outline: none;
 }
 
-.board{
-    height: 25rem;
-    width: 25rem;
-    background: #cdc1b5;
-    border: 0.3125rem solid  #bbada0;
-    border-radius: 0.3125rem;
-    display: flex;
-    flex-wrap: wrap;
+/* ===== Maze Container ===== */
+#view {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-.tile{
-    height: 5.625rem;
-    width: 5.625rem;
-    border: 0.3125rem solid #bbada0;
-    font-size: 3.125rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 500ms all linear;
+#mazeContainer {
+  opacity: 1;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-
-.b2 {
-    background-color: #eee4da;
-    color: #727371;
+#mazeCanvas {
+  display: block;
+  border: 2px solid black;
+  width: 100%;
+  height: auto;
+  max-width: 95vw;
+  max-height: 80vh;
 }
 
-.b4 {
-    background-color: #ece0ca;
-    color: #727371;
+/* ===== Instructions and Arrows ===== */
+#instructions {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #333;
 }
 
-.b8 {
-    background-color: #f4b17a;
-    color: white;
+#arrow-icons {
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
 }
 
-.b16{
-    background-color: #f59575;
-    color: white;
+#arrow-icons span {
+  margin: 0 10px;
 }
 
-.b32{
-    background-color: #f57c5f;
-    color: white;
+/* ===== Message Modal ===== */
+#Message-Container {
+  visibility: hidden;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.b64{
-    background-color: #f65d3b;
-    color: white;
+#message {
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  background-color: #222;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
 }
 
-.b128{
-    background-color: #edce71;
-    color: white;
+/* ===== Headings ===== */
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
-.b256{
-    background-color: #edcc63;
-    color: white;
+#menu h1 {
+  font-size: 2.5rem;
+  margin-top: 1rem;
 }
 
-.b512{
-    background-color: #edc651;
-    color: white;
+/* ===== Responsive Breakpoints ===== */
+
+/* Small screens (phones) */
+@media only screen and (max-width: 600px) {
+  input, select {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  #mazeCanvas {
+    max-width: 95vw;
+    height: auto;
+  }
+
+  #instructions {
+    font-size: 1rem;
+  }
+
+  #arrow-icons {
+    font-size: 1.4rem;
+  }
 }
 
-.b1024{
-    background-color: #eec744;
-    color: white;
+/* Medium screens (tablets) */
+@media only screen and (max-width: 900px) {
+  #mazeCanvas {
+    max-width: 90vw;
+    height: auto;
+  }
+
+  input, select {
+    width: 140px;
+  }
 }
 
-.b2048{
-    background-color: #ecc230;
-    color: white;
-}
-
-.b4096 {
-    background-color: #fe3d3d;
-    color: white;
-}
-
-.b8192 {
-    background-color: #ff2020;
-    color: white;
-}
-
-.footer{
-    width: 25rem;
-    height: 12.5rem;
-    margin-top: 5rem;    
-}
-
-p{
-    font-size: 1.1rem;
-}
-
-.arrow-keys, .key{
-    display: none;
-}
-
-.key{
-    height: 5rem;
-    width: 5rem;
-    border-radius: 0.5rem;
-    align-items: center;
-    justify-content: center;
-    background-color: #bbada0;
-    margin: 0.5rem;
-}
-
-.key img{
-    width: 4.5rem;
-}
-
-#keyup{
-    align-items: center;
-    justify-content: center;
-}
-
-@media only screen and (max-width: 500px) {
-    :root {
-        font-size: 12px;
-    }
-    .tile{
-        height: 5.75rem;
-        width: 5.75rem;
-    }
-    .arrow-keys, .key{
-        display: flex;
-    }
-    .footer{
-        margin-top: 2rem;
-    }  
-}
-
-@media only screen and (max-width: 400px) {
-    :root {
-        font-size: 10px;
-    }
-    .arrow-keys, .key{
-        display: flex;
-    }
-    .tile{
-        height: 5.65rem;
-        width: 5.65rem;
-    }
-    .footer{
-        margin-top: 2rem;
-    }  
-    
+/* Large screens (desktops) */
+@media only screen and (min-width: 1200px) {
+  #mazeCanvas {
+    width: 600px;
+    height: 600px;
+  }
 }
